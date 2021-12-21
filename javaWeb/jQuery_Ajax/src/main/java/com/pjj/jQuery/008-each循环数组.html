@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each函数</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $("#btn").click(function () {
+            var arr = [10, 52, 30];
+            $.each(arr, function (index, element) {
+                alert("第" + (index + 1) + "元素是：" + element);
+            })
+        })
+    })
+
+
+</script>
+
+<button id="btn">调用each</button>
+
+</body>
+</html>

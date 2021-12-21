@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EL_JSTL" />
+        <module name="tomcat" />
+        <module name="servlet" />
+        <module name="jsp" />
+        <module name="book" />
+        <module name="Cookie_Session" />
+        <module name="Jquery_Ajax" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="book" target="1.8" />
+      <module name="Cookie_Session" target="1.8" />
+      <module name="EL_JSTL" target="1.8" />
+      <module name="Jquery_Ajax" target="1.8" />
+      <module name="jsp" target="1.8" />
+      <module name="servlet" target="1.8" />
+      <module name="tomcat" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery入门</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    $(function () {     //表示onload
+        var $hello = $("#hello");   //获取id对象，jQuery对象以$开头
+        $hello.click(function () {   //绑定单击事件
+            alert("jQuery单击事件的对象");
+        })
+    })
+
+</script>
+
+
+<input type="button" value="hello world" id="hello">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../javaWeb/book" />
+    <file type="web" url="file://$PROJECT_DIR$/../javaWeb/Cookie_Session" />
+    <file type="web" url="file://$PROJECT_DIR$/../javaWeb/EL_JSTL" />
+    <file type="web" url="file://$PROJECT_DIR$/../javaWeb/jQuery_Ajax" />
+    <file type="web" url="file://$PROJECT_DIR$/../javaWeb/jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/../javaWeb/servlet" />
+    <file type="web" url="file://$PROJECT_DIR$/../javaWeb/tomcat" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="NASHORN" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../javaWeb/tomcat/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaWeb/servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaWeb/book/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaWeb/jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaWeb/EL_JSTL/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaWeb/Cookie/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaWeb/Cookie_Session/pom.xml" />
+        <option value="$PROJECT_DIR$/../javaWeb/jQuery_Ajax/pom.xml" />
+      </list>
+    </option>
+  </component>
+</project>

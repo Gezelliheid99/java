@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../SpringBoot/ch04-boot-web-admin/ch04-boot-web-admin.iml" filepath="$PROJECT_DIR$/../SpringBoot/ch04-boot-web-admin/ch04-boot-web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SpringBoot/ch05-web-adminserver/ch05-web-adminserver.iml" filepath="$PROJECT_DIR$/../SpringBoot/ch05-web-adminserver/ch05-web-adminserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jedis/jedis.iml" filepath="$PROJECT_DIR$/jedis/jedis.iml" />
+    </modules>
+  </component>
+</project>

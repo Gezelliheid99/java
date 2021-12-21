@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取网页时间</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var nowDate = new Date();
+        var nowDate1 = nowDate.toLocaleDateString();
+        document.write(nowDate1);
+        document.write("<br>")
+        document.write("<br>")
+        var t = new Date();
+        var year = t.getFullYear();
+        var month = t.getMonth();  //月份是从0-11月
+        var day = t.getDate();
+        document.write(year + "年" + (month+1) +  "月" + day + "日") ;
+        document.write("<br>")
+        document.write("<br>")
+        document.write(new Date().getTime());
+        document.write("<br>")
+    </script>
+
+    <script type="text/javascript">
+        function displayTime(){
+            var nowtime = new Date();
+            var time = nowtime.toLocaleString();
+            document.getElementById("timeDiv").innerHTML = time;
+        }
+        //每隔一秒调用一次displayTime()函数
+        function start(){
+            v = window.setInterval("displayTime()",1000);
+        }
+        function stop(){
+            window.clearInterval(v);
+        }
+
+
+    </script>
+
+    <input type="button" value="显示当前时间" onclick="start()">
+    <input type="button" value="暂停当前时间" onclick="stop()">
+    <div id="timeDiv"></div>
+
+</body>
+</html>

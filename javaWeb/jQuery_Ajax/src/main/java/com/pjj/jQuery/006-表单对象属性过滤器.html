@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选项属性过滤器</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $("#btn1").click(function () {
+            var $obj = $(":text:enabled");
+            $obj.val("hello");
+        })
+        $("#btn2").click(function () {
+            var $checkbox = $(":checkbox:checked");
+            for (var i = 0; i < $checkbox.length; i++) {
+                alert($checkbox[i].value);
+            }
+
+        })
+        $("#btn3").click(function () {
+            var $option = $("select>option:selected");
+            alert($option.val());
+
+        })
+    })
+
+
+</script>
+
+
+<p>文本框</p>
+<input type="text" id="text1" value="text1"> <br>
+<input type="text" id="text2" value="text2" disabled="true"> <br>
+<input type="text" id="text3" value="text3"> <br>
+<input type="text" id="text4" value="text4" disabled> <br>
+<p>复选框</p>
+<input type="checkbox" value="smoke">抽烟<br>
+<input type="checkbox" value="drink" checked>喝酒<br>
+<input type="checkbox" value="perm" checked>烫头<br>
+<p>下拉列表</p>
+<select id="lang">
+    <option value="java">java</option>
+    <option value="go">go语言</option>
+    <option value="c">c语言</option>
+</select>
+<p>按钮</p>
+<button id="btn1">所有可用的text设置为hello</button>
+<br>
+<button id="btn2">显示被选中的复选框的值</button>
+<br>
+<button id="btn3">显示下拉列表中的值</button>
+</body>
+</html>

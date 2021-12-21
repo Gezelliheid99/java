@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式操作</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 260px;
+        }
+
+        div.whiteBorder {
+            border: 2px white solid;
+        }
+
+        div.redDiv {
+            background-color: red;
+        }
+
+        div.blueBorder {
+            border: 5px blue solid;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            var $divFirst = $("div:first");
+
+            $("#btn1").click(function () {
+                $divFirst.addClass("redDiv blueBorder");
+            });
+
+            $("#btn2").click(function () {
+                $divFirst.removeClass("redDiv");
+            });
+
+            $("#btn3").click(function () {
+                //切换样式
+                $divFirst.toggleClass("redDiv");
+            });
+            $("#btn4").click(function () {
+                //获取坐标
+                var pos = $divFirst.offset();
+                console.log(pos);
+
+                $divFirst.offset({
+                    top: 100,
+                    left: 500
+                })
+            });
+        })
+
+
+    </script>
+
+
+</head>
+<body>
+<table align="center">
+    <tr>
+        <td>
+            <div class="border">
+            </div>
+        </td>
+
+        <td>
+            <div class="btn">
+                <input type="button" value="addClass()" id="btn1">
+                <input type="button" value="removeClass()" id="btn2">
+                <input type="button" value="toggleClass()" id="btn3">
+                <input type="button" value="offset()" id="btn4">
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>

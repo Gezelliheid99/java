@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框的全选与取消全选</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function (){
+            var firstChk = document.getElementById("allSelect");
+            var interestBox = document.getElementsByName("interest");
+            firstChk.onclick = function (){
+                    for (var i = 0; i < interestBox.length; i++) {
+                        interestBox[i].checked = firstChk.checked;
+                    }
+                }
+            var all = interestBox.length;
+            var checkedCount = 0;
+            for (var i = 0; i < interestBox.length; i++) {
+                interestBox[i].onclick = function (){
+                    var checkedCount = 0;
+                    for (var i = 0; i < interestBox.length; i++){
+                        if(interestBox[i].checked){
+                            checkedCount++;
+                        }
+                    }
+                    firstChk.checked = (all == checkedCount); //如果全选则为true，全选框打勾，如果没有全选为false，全选框取消打勾
+                }
+            }
+        }
+
+    </script>
+
+
+
+    <input type="checkbox"  id="allSelect" >全选 <br>
+    <input type="checkbox" name="interest" value="smoke">抽烟 <br>
+    <input type="checkbox" name="interest" value="drink">喝酒 <br>
+    <input type="checkbox" name="interest" value="perm">烫头
+
+</body>
+</html>

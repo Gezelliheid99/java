@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/Cookie_Session/Cookie_Session.iml" filepath="$PROJECT_DIR$/../javaWeb/Cookie_Session/Cookie_Session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/EL_JSTL/EL_JSTL.iml" filepath="$PROJECT_DIR$/../javaWeb/EL_JSTL/EL_JSTL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/jQuery_Ajax/Jquery_Ajax.iml" filepath="$PROJECT_DIR$/../javaWeb/jQuery_Ajax/Jquery_Ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/Servlet.iml" filepath="$PROJECT_DIR$/../javaWeb/Servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/Web.iml" filepath="$PROJECT_DIR$/../javaWeb/Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/book/book.iml" filepath="$PROJECT_DIR$/../javaWeb/book/book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/javaWeb.iml" filepath="$PROJECT_DIR$/../javaWeb/javaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/jsp/jsp.iml" filepath="$PROJECT_DIR$/../javaWeb/jsp/jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/servlet/servlet.iml" filepath="$PROJECT_DIR$/../javaWeb/servlet/servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../javaWeb/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/../javaWeb/tomcat/tomcat.iml" />
+    </modules>
+  </component>
+</project>

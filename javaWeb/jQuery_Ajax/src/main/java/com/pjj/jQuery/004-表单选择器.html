@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选择器</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<!-- 表单选择器中 选取对象使用 $(":type") -->
+<script type="text/javascript">
+    $(function () {
+        $("#btn").click(function () {   //通过id获取需要 #id
+            $(":text").val("表单选择器的text");
+            var $button = $(":button");
+            for (var i = 0; i < $button.length; i++) {
+                alert($button[i].value);         //这里的数组元素已经是DOM对象 所以使用 .value
+            }
+
+        })
+
+
+    })
+
+
+</script>
+
+<input type="text"> <br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="button" value="btn1"><br>
+<input type="button" value="btn2"><br>
+<input type="button" value="btn3"><br>
+<input type="button" value="btn4"><br>
+<br><br>
+<input type="button" id="btn" value="表单选择器">
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮箱地址正则表达式</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        window.onload = function (){
+            document.getElementById("btn").onclick = function (){
+                var email = document.getElementById("email").value;
+                var emailRegExp = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+                var ok = emailRegExp.test(email);
+                if(!ok){
+                    document.getElementById("errorEmail").innerText = "邮箱不合法";
+                }
+                else {
+                    document.getElementById("errorEmail").style = "color:green";
+                    document.getElementById("errorEmail").innerText = "验证成功";
+                }
+            }
+            document.getElementById("email").onfocus = function (){
+                document.getElementById("errorEmail").innerText = "";
+            }
+        }
+
+
+    </script>
+
+
+    <input type="text" id="email">
+    <span id="errorEmail" style="color: red; font-size: 12px" ></span>
+    <br>
+    <input type="button" value="验证邮箱" id="btn">
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本过滤器</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $("#btn").click(function () {
+            $(":text:first").val("第一个text");
+            $(":text:last").val("最后一个text");
+            $(":text:eq(1)").val("第二个text");
+
+        })
+        $("#btn2").click(function () {
+            $(":text:lt(1)").val("小于下标1的text");
+            $(":text:gt(2)").val("大于下标1的text");
+        })
+
+    })
+
+</script>
+
+<input type="text"> <br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="button" value="btn1"><br>
+<input type="button" value="btn2"><br>
+<input type="button" value="btn3"><br>
+<input type="button" value="btn4"><br>
+<br><br>
+<input type="button" id="btn" value="基本过滤器1">
+<input type="button" id="btn2" value="基本过滤器2">
+</body>
+</html>

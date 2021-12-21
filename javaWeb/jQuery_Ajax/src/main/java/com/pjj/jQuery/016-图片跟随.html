@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片跟随</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        ;
+        #small {
+            margin-top: 150px;
+        }
+
+        #showBig {
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#small").bind("mouseover mouseout mousemove", function (event) {
+                if (event.type == "mouseover") {
+                    $("#showBig").show();
+                } else if (event.type == "mouseout") {
+                    $("#showBig").hide();
+                } else if (event.type == "mousemove") {
+                    $("#showBig").offset({
+                        //图片和鼠标太接近会触发上面的事件
+                        top: event.pageY + 10,
+                        left: event.pageX + 10
+                    });
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+
+<img id="small" src="../../../../webapp/img/small.jpg" height="174" width="200"/>
+
+<div id="showBig">
+    <img src="../../../../webapp/img/big.jpg">
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

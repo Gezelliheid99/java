@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Mybatis01/Mybatis01.iml" filepath="$PROJECT_DIR$/Mybatis01/Mybatis01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSM.iml" filepath="$PROJECT_DIR$/SSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSM-integration/SSM-integration.iml" filepath="$PROJECT_DIR$/SSM-integration/SSM-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Mybatis/Spring-Mybatis.iml" filepath="$PROJECT_DIR$/Spring-Mybatis/Spring-Mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-transaction/Spring-transaction.iml" filepath="$PROJECT_DIR$/Spring-transaction/Spring-transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-transaction-aspectJ/Spring-transaction-aspectJ.iml" filepath="$PROJECT_DIR$/Spring-transaction-aspectJ/Spring-transaction-aspectJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-web/Spring-web.iml" filepath="$PROJECT_DIR$/Spring-web/Spring-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring01/Spring01.iml" filepath="$PROJECT_DIR$/Spring01/Spring01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring02-AOP/Spring02-AOP.iml" filepath="$PROJECT_DIR$/Spring02-AOP/Spring02-AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-exception-handler/SpringMVC-exception-handler.iml" filepath="$PROJECT_DIR$/SpringMVC-exception-handler/SpringMVC-exception-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-interceptor/SpringMVC-interceptor.iml" filepath="$PROJECT_DIR$/SpringMVC-interceptor/SpringMVC-interceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-receiveparam/SpringMVC-receiveparam.iml" filepath="$PROJECT_DIR$/SpringMVC-receiveparam/SpringMVC-receiveparam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-return/SpringMVC-return.iml" filepath="$PROJECT_DIR$/SpringMVC-return/SpringMVC-return.iml" />
+    </modules>
+  </component>
+</project>

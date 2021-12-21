@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style type="text/css">
+        #registerTable{
+            position: absolute;
+            left: 40%;
+            top: 30%;
+            font-size: 20px;
+        }
+        input{
+            border-radius: 8px;
+        }
+        #buttonForm{
+            font-size: 15px;
+            color: aqua;
+        }
+        #btn{
+            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+            width: 100px;
+        }
+        #reset{
+            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+            width: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function (){
+
+
+            //用户名验证
+            var usernameText = document.getElementById("username");
+            var errorUsername = document.getElementById("errorUsername");
+            usernameText.onblur = function (){
+                var username = usernameText.value.trim();
+                var usernameRegExp = /^[a-z0-9_-]{6,14}$/
+                var ok = usernameRegExp.test(username);
+                if(!ok){
+                    errorUsername.innerText = "用户名不合法";
+                }else {
+                    errorUsername.style = "color:green;font-size: 12px";
+                    errorUsername.innerText = "用户名合法" ;
+
+                }
+            }
+            usernameText.onfocus = function (){
+                if(errorUsername.innerText != "用户名合法"){
+                    usernameText.value = "";
+                }
+                errorUsername.innerText = "";
+            }
+
+            //密码验证
+            var passwordText = document.getElementById("password");
+            var errorPassword = document.getElementById("errorPassword");
+            passwordText.onblur = function () {
+                var password = passwordText.value;
+                var passwordRegExp = /^[a-z0-9_-]{6,18}$/
+                var okpwd = passwordRegExp.test(password);
+                if (!okpwd) {
+                    errorPassword.innerText = "密码不合法";
+                } else {
+                    errorPassword.style = "color:green;font-size: 12px";
+                    errorPassword.innerText = "密码合法"
+
+                }
+            }
+            passwordText.onfocus = function (){
+
+                if(errorPassword.innerText != "密码合法"){
+                    password.value = "";
+                }
+                errorPassword.innerText = "";
+            }
+
+            //确认密码验证
+            var password2Text = document.getElementById("password2");
+            var errorPassword2 = document.getElementById("errorPassword2")
+            password2Text.onblur = function (){
+                var password2 = password2Text.value;
+                if(password2 === passwordText.value && password2 != ""){
+                    errorPassword2.style = "color:green;font-size: 12px";
+                    errorPassword2.innerText = "确认密码正确"
+
+                }else {
+                    errorPassword2.innerText = "确认密码与密码不一致"
+
+                }
+            }
+            password2Text.onfocus = function (){
+                if(errorPassword2.innerText != "确认密码正确"){
+                    password2Text.value = "";
+                }
+                errorPassword2.innerText = "";
+            }
+
+            //邮箱验证
+            var emailText = document.getElementById("email");
+            var errorEmail = document.getElementById("errorEmail");
+            emailText.onblur = function (){
+                var email = emailText.value.trim();
+                var emailRegExp = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+                var ok = emailRegExp.test(email);
+                if(!ok){
+
+                    errorEmail.innerText = "邮箱不合法";
+                }
+                else {
+                    errorEmail.style = "color:green;font-size: 12px";
+                    errorEmail.innerText = "验证成功";
+
+                }
+            }
+            emailText.onfocus = function (){
+                if(errorEmail.innerText != "验证成功"){
+                    emailText.value = "";
+                }
+                errorEmail.innerText = "";
+            }
+
+            document.getElementById("btn").onclick = function (){
+                //提交之前自动确认所有的文本框
+                usernameText.focus();
+                usernameText.blur();
+                passwordText.focus();
+                passwordText.blur();
+                password2Text.focus();
+                password2Text.blur();
+                emailText.focus();
+                emailText.blur();
+
+                if(errorEmail.innerText == "验证成功" &&
+                   errorPassword2.innerText == "确认密码正确" &&
+                   errorPassword.innerText == "密码合法" &&
+                   errorUsername.innerText == "用户名合法"){
+                   var userForm = document.getElementById("userForm");
+                   userForm.submit();
+                }
+            }
+
+
+
+
+
+        }
+
+
+    </script>
+
+    <form id="userForm" action="" method="post">
+        <table align="center" id="registerTable" >
+                <tr>
+                    <td align="right">
+                        用户名
+                    </td>
+                    <td>
+                        <input type="text" id="username" name="username">
+                    </td>
+                    <td>
+                        <span id="errorUsername" style="color: red; font-size: 12px"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        密码
+                    </td>
+                    <td>
+                        <input type="text" id="password" name="password" >
+                    </td>
+                    <td>
+                        <span id="errorPassword" style="color: red; font-size: 12px"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        确认密码
+                    </td>
+                    <td>
+                        <input type="text" id="password2" >
+                    </td>
+                    <td>
+                        <span id="errorPassword2" style="color: red; font-size: 12px"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        电子邮箱
+                    </td>
+                    <td>
+                        <input type="text" id="email" name="email">
+                    </td>
+                    <td>
+                        <span id="errorEmail" style="color: red; font-size: 12px"></span>
+                    </td>
+                </tr>
+
+
+            <tr align="center" id="buttonForm">
+                <td colspan="2">
+                    <input type="button" value="注册" id="btn">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="reset" value="重置" id="reset">
+                </td>
+
+            </tr>
+
+
+        </table>
+
+
+    </form>
+
+
+
+</body>
+</html>

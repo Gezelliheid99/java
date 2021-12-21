@@ -1,0 +1,8 @@
+spring:
+  rabbitmq:
+    host: 192.168.129.128
+    port: 5672
+    username: root
+    password: root
+    publisher-confirm-type: correlated
+    publisher-returns: true

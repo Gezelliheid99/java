@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捕捉回车键</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        window.onload = function (){
+            document.getElementById("text").onkeydown = function (event){
+                if (event.keyCode === 13 ){
+                    alert("sb");
+                }
+
+
+            }
+        }
+
+    </script>
+
+    <input type="text" id="text">
+
+
+</body>
+</html>

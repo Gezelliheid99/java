@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象与dom对象</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        var btnObj = document.getElementById("btn");
+        var $btn = $(btnObj);
+        btnObj.onclick = function () {
+            alert("dom对象：" + btnObj.value);
+            alert("jQuery对象：" + $btn.val());
+        }
+
+    })
+
+</script>
+
+<input type="button" value="我是一个dom对象" id="btn">
+
+
+</body>
+</html>

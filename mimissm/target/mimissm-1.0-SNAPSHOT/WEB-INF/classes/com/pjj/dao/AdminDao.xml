@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pjj.dao.AdminDao">
+
+    <resultMap type="com.pjj.pojo.Admin" id="AdminMap">
+        <result property="aId" column="a_id" jdbcType="INTEGER"/>
+        <result property="aName" column="a_name" jdbcType="VARCHAR"/>
+        <result property="aPass" column="a_pass" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AdminMap">
+        select a_id,
+               a_name,
+               a_pass
+        from xiaomissm.admin
+        where a_id = #{aId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AdminMap">
+        select a_id,
+               a_name,
+               a_pass
+        from xiaomissm.admin limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="AdminMap">
+        select
+        a_id, a_name, a_pass
+        from xiaomissm.admin
+        <where>
+            <if test="aId != null">
+                and a_id = #{aId}
+            </if>
+            <if test="aName != null and aName != ''">
+                and a_name = #{aName}
+            </if>
+            <if test="aPass != null and aPass != ''">
+                and a_pass = #{aPass}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryByName" resultMap="AdminMap">
+        select a_id, a_name, a_pass from xiaomissm.admin where a_name = #{aName}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="aId" useGeneratedKeys="true">
+        insert into xiaomissm.admin(a_name, a_pass)
+        values (#{aName}, #{aPass})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="aId" useGeneratedKeys="true">
+        insert into xiaomissm.admin(a_name, a_pass)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.aName}, #{entity.aPass})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="aId" useGeneratedKeys="true">
+        insert into xiaomissm.admin(a_name, a_pass)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.aName}, #{entity.aPass})
+        </foreach>
+        on duplicate key update
+        a_name = values(a_name) , a_pass = values(a_pass)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update xiaomissm.admin
+        <set>
+            <if test="aName != null and aName != ''">
+                a_name = #{aName},
+            </if>
+            <if test="aPass != null and aPass != ''">
+                a_pass = #{aPass},
+            </if>
+        </set>
+        where a_id = #{aId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from xiaomissm.admin
+        where a_id = #{aId}
+    </delete>
+
+</mapper>
+

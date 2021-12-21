@@ -1,0 +1,4 @@
+person:
+  userName: zhangsan
+  boss: true
+  score:

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一组函数</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $("#btn1").click(function () {
+            alert($(":text").val());
+        });
+        $("#btn2").click(function () {
+            $(":text").val("apex");
+        });
+        $("#btn3").click(function () {
+            var $obj = $("div");
+            alert($obj.text());
+        });
+        $("#btn4").click(function () {
+            var $obj = $("div");
+            $obj.text("div而已");
+        });
+        $("#btn5").click(function () {
+            var $obj = $("img");
+            alert($obj.attr("src"));
+        });
+        $("#btn6").click(function () {
+            var $obj = $("img");
+            $obj.attr("src", "../img/ex2.jpg");
+        });
+
+    })
+</script>
+
+
+<p>文本框</p>
+<input type="text" value="张三"> <br>
+<input type="text" value="李四"> <br>
+<input type="text" value="王五">
+<p>文本数据</p>
+<div>我是第一个div</div>
+<div>我是第二个div</div>
+<div>我是第三个div</div>
+<p>图片</p>
+<img src="../../../../webapp/img/ex3.jpg" height="128" width="128"/>
+<p>功能按钮</p>
+<button id="btn1">获取第一个文本框的值</button>
+<br>
+<button id="btn2">设置所有文本框的值</button>
+<br>
+<button id="btn3">获取div的所有文本</button>
+<br>
+<button id="btn4">设置div新文本</button>
+<br>
+<button id="btn5">获取img的src</button>
+<br>
+<button id="btn6">这是新的img</button>
+<br>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on绑定事件</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $("#btn1").click(function () {
+            $("div").append("<input id='btn2' type='button' value='新建按钮'></input>");
+            $("#btn2").on("click", function () {
+                alert("新按钮被点击了")
+            })
+        })
+    })
+
+
+</script>
+
+<div id="div">
+    此处需要一个button
+</div>
+
+<input type="button" id="btn1" value="创建一个新的按钮">
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML和innertext</title>
+    <style type="text/css">
+        #div1{
+            background: lightskyblue;
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            border-radius: 10px;
+        }
+        #btn{
+            color: whitesmoke;
+            background: black;
+            border: 1px black solid;
+            border-radius: 20px;
+            position: absolute;
+            height: 30px;
+            top: 35%;
+            left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function (){
+            document.getElementById("btn").onclick = function (){
+                var divElt = document.getElementById("div1");
+
+                divElt.innerHTML = "用户名不能为空";
+            }
+        }
+
+    </script>
+    <input type="button" value="设置div中的内容" id="btn">
+    <div id="div1"></div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

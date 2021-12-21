@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取value</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //获取文本框里的内容
+        /*window.onload = function (){
+            document.getElementById("btn").onclick = function (){
+                var userElmt = document.getElementById("username");
+                var username = userElmt.value;
+                alert(username);
+            }
+        }*/
+        //转移文本框的内容到另外一个文本框
+        window.onload = function (){
+            document.getElementById("btn").onclick = function (){
+                var username = document.getElementById("username").value;
+                document.getElementById("text2").value = username;
+                username = "";
+            }
+        }
+
+    </script>
+
+    <input type="text" id="username">
+    <input type="button" value="提交" id="btn">
+    <input type="text" id="text2">
+
+
+</body>
+</html>

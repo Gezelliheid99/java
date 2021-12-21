@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pjj.dao.ProductTypeDao">
+
+    <resultMap type="com.pjj.pojo.ProductType" id="ProductTypeMap">
+        <result property="typeId" column="type_id" jdbcType="INTEGER"/>
+        <result property="typeName" column="type_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="ProductTypeMap">
+        select type_id,
+               type_name
+        from xiaomissm.product_type
+        where type_id = #{typeId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="ProductTypeMap">
+        select type_id,
+               type_name
+        from xiaomissm.product_type limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="ProductTypeMap">
+        select
+        type_id, type_name
+        from xiaomissm.product_type
+        <where>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="typeName != null and typeName != ''">
+                and type_name = #{typeName}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="typeId" useGeneratedKeys="true">
+        insert into xiaomissm.product_type(type_name)
+        values (#{typeName})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="typeId" useGeneratedKeys="true">
+        insert into xiaomissm.product_type(type_name)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.typeName})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="typeId" useGeneratedKeys="true">
+        insert into xiaomissm.product_type(type_name)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.typeName})
+        </foreach>
+        on duplicate key update
+        type_name = values(type_name)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update xiaomissm.product_type
+        <set>
+            <if test="typeName != null and typeName != ''">
+                type_name = #{typeName},
+            </if>
+        </set>
+        where type_id = #{typeId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from xiaomissm.product_type
+        where type_id = #{typeId}
+    </delete>
+
+</mapper>
+

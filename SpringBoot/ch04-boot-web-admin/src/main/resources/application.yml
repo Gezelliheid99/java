@@ -1,0 +1,67 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/xiaomissm
+    username: root
+    password: 111
+    druid:
+      filters: stat,wall
+      aop-patterns: com.pjj.boot.*
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        reset-enable: false
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+      filter:
+        stat:
+          slow-sql-millis: 1000
+          log-slow-sql: true
+        wall:
+          enabled: true
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
+#  redis:
+#    host: 192.168.129.128
+#    port: 6379
+#    connect-timeout: 5000
+#    jedis:
+#      pool:
+#        max-active: 50
+#        max-wait: -1
+#        max-idle: 8
+#        min-idle: 0
+#    client-type: jedis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+management:
+  endpoints:
+    enabled-by-default: true  #默认开启所有监控端点
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

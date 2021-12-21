@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--##############set注入####################-->
+    <!--<bean id="someService" class="com.pjj.Service.impl.SomeServiceImpl" />
+    <bean id="someService1" class="com.pjj.Service.impl.SomeServiceImpl" scope="prototype" />
+    <bean id="date" class="java.util.Date"/>
+    &lt;!&ndash;byName自动注入&ndash;&gt;
+    <bean id="student" class="com.pjj.Pojo.Student" autowire="byName">
+        <property name="name" value="张三"/>
+        <property name="age" value="20"/>
+    </bean>
+    <bean id="student2" class="com.pjj.Pojo.Student" autowire="byType">
+        <property name="name" value="李四"/>
+        <property name="age" value="20"/>
+    </bean>
+
+    <bean id="school" class="com.pjj.Pojo.School">
+        <property name="name" value="厦门大学"/>
+        <property name="address" value="思明区"/>
+    </bean>-->
+
+
+
+    <!--##############注解注入################-->
+    <!--声明组件扫描器-->
+    <context:component-scan base-package="com.pjj.Pojo"/>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

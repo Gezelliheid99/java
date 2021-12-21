@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array数组</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        //array会自动扩容，如果添加元素，中间没有元素的位置是undefined
+
+        //join会在各个数组元素中间添加join的字符串
+        var array1 = [1,2,3,"g",5]
+        var str = array1.join("_");
+        alert(str)
+
+        array1.push(20);
+        document.write(array1.join("<br>"));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>js的事件</title>
+    </head>
+    <body>
+        <!--注册事件的第一种方式，直接在标签中添加事件句柄-->
+        <input align="center" type="button" value="hello" onclick="sayHello()">
+
+        <!--注册事件的第二种方式，命名id，后通过dom调用id来执行函数-->
+        <input align="center" type="button" value="hello2" id="myButton" >
+
+        <script type="text/javascript">
+            //在当前程序来说 sayHello被叫做回调函数（callback函数），别人来掉这个函数
+            function sayHello(){
+                alert("hello js!");
+            }
+            function sayHello2(){
+                alert("hello2")
+            }
+            var button1 = document.getElementById("myButton");
+            button1.onmouseup = sayHello2;
+
+
+
+        </script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取下拉列表中的value</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function (){
+            var provinceList = document.getElementById("provinceList")
+            provinceList.onchange = function (){
+                alert(this.value);
+            }
+        }
+    </script>
+    <select id="provinceList">
+        <option value=""> --请选择省份-- </option>
+        <option value="beijing">北京市</option>
+        <option value="fujian">福建省</option>
+        <option value="guangdong">广东省</option>
+
+    </select>
+</body>
+</html>

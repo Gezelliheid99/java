@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>单元格的合并</title>
+  </head>
+
+      <br><br><br><br><br>
+  <body>
+     <table align="center" border="1px" width = "40%" height="100%">
+	     <tr>
+               <!--th是表头的标签-->
+             <th>第一列</th>
+			 <th>第二列</th>
+			 <th>第三列</th>
+			 <th>第四列</th>
+		 </tr>
+	     <tr>
+		    <td>11</td>
+			<td rowspan=2> 12<br> 22</td>  <!--rowpan：合并的单元格数量-->
+			<td colspan=2> 13&nbsp;14 </td>
+			
+		 </tr>
+		 <tr>
+		    <td>21</td>
+			
+			<td>23</td>
+			<td rowspan=2> 24<br>34 </td>
+		 </tr>
+         <tr>
+		    <td>31</td>
+			<td>32</td>
+			<td>33</td>
+			
+		 </tr>
+         
+	 </table>
+  </body>
+
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring-transaction-aspectJ" />
+        <module name="SpringMVC" />
+        <module name="Spring02-AOP" />
+        <module name="Spring-Mybatis" />
+        <module name="SSM-integration" />
+        <module name="Spring01" />
+        <module name="Spring-transaction" />
+        <module name="Mybatis01" />
+        <module name="SpringMVC-exception-handler" />
+        <module name="SpringMVC-interceptor" />
+        <module name="SpringMVC-return" />
+        <module name="SpringMVC-receiveparam" />
+        <module name="Spring-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ch03-ioc-homework" target="1.8" />
+      <module name="Mybatis01" target="11" />
+      <module name="SpingMVC-receiveparam" target="1.8" />
+      <module name="Spring-Mybatis" target="11" />
+      <module name="Spring-Mybatis (1)" target="11" />
+      <module name="Spring-transaction" target="11" />
+      <module name="Spring-transaction-aspectJ" target="11" />
+      <module name="Spring-web" target="11" />
+      <module name="Spring01" target="11" />
+      <module name="Spring02-AOP" target="1.8" />
+      <module name="SpringMVC" target="1.8" />
+      <module name="SpringMVC-exception-handler" target="1.8" />
+      <module name="SpringMVC-exception-handler (1)" target="1.8" />
+      <module name="SpringMVC-interceptor" target="1.8" />
+      <module name="SpringMVC-interceptor (1)" target="1.8" />
+      <module name="SpringMVC-receiveparam" target="1.8" />
+      <module name="SpringMVC-receiveparam (1)" target="1.8" />
+      <module name="SpringMVC-return" target="1.8" />
+      <module name="SpringMVC-return (1)" target="1.8" />
+      <module name="SSM-integration" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

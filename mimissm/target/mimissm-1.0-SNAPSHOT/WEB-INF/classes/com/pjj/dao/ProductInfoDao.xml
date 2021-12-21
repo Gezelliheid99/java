@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pjj.dao.ProductInfoDao">
+
+    <resultMap type="com.pjj.pojo.ProductInfo" id="ProductInfoMap">
+        <result property="pId" column="p_id" jdbcType="INTEGER"/>
+        <result property="pName" column="p_name" jdbcType="VARCHAR"/>
+        <result property="pContent" column="p_content" jdbcType="VARCHAR"/>
+        <result property="pPrice" column="p_price" jdbcType="INTEGER"/>
+        <result property="pImage" column="p_image" jdbcType="VARCHAR"/>
+        <result property="pNumber" column="p_number" jdbcType="INTEGER"/>
+        <result property="typeId" column="type_id" jdbcType="INTEGER"/>
+        <result property="pDate" column="p_date" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="ProductInfoMap">
+        select p_id,
+               p_name,
+               p_content,
+               p_price,
+               p_image,
+               p_number,
+               type_id,
+               p_date
+        from xiaomissm.product_info
+        where p_id = #{pId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="ProductInfoMap">
+        select p_id,
+               p_name,
+               p_content,
+               p_price,
+               p_image,
+               p_number,
+               type_id,
+               p_date
+        from xiaomissm.product_info limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="ProductInfoMap">
+        select
+        p_id, p_name, p_content, p_price, p_image, p_number, type_id, p_date
+        from xiaomissm.product_info
+        <where>
+            <if test="pId != null">
+                and p_id = #{pId}
+            </if>
+            <if test="pName != null and pName != ''">
+                and p_name = #{pName}
+            </if>
+            <if test="pContent != null and pContent != ''">
+                and p_content = #{pContent}
+            </if>
+            <if test="pPrice != null">
+                and p_price = #{pPrice}
+            </if>
+            <if test="pImage != null and pImage != ''">
+                and p_image = #{pImage}
+            </if>
+            <if test="pNumber != null">
+                and p_number = #{pNumber}
+            </if>
+            <if test="typeId != null">
+                and type_id = #{typeId}
+            </if>
+            <if test="pDate != null">
+                and p_date = #{pDate}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryAllOrderDesc" resultMap="ProductInfoMap">
+        select p_id, p_name, p_content, p_price, p_image, p_number, type_id, p_date
+        from xiaomissm.product_info
+        <if test="condition != null">
+            order by ${condition}
+        </if>
+
+    </select>
+
+    <select id="selectCondition" resultMap="ProductInfoMap" parameterType="com.pjj.pojo.vo.ProductInfoVo">
+        select p_id, p_name, p_content, p_price, p_image, p_number, type_id, p_date
+        from xiaomissm.product_info
+        <where>
+            <if test="pName != null and pName != '' ">
+                and p_name like '%${pName}%'
+            </if>
+            <if test="typeId != null and typeId != -1 ">
+                and type_id = #{typeId}
+            </if>
+            <!--如果最低价格不为空，最高价格为空，则价格大于最低价格-->
+            <if test="(lowPrice != null and lowPrice != '') and (highPrice == null or highPrice == '') ">
+                and p_price &gt;= #{lowPrice}
+            </if>
+            <!--如果最高价格不为空，最低价格为空，则价格大于最低价格-->
+            <if test="(lowPrice == null or lowPrice == '') and (highPrice != null and highPrice != '') ">
+                and p_price &lt;= #{highPrice}
+            </if>
+            <!--最高最低价格都不为空-->
+            <if test="(lowPrice != null and lowPrice != '') and (highPrice != null and highPrice != '') ">
+                and p_price between #{lowPrice} and #{highPrice}
+            </if>
+        </where>
+        order by p_id desc
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="pId" useGeneratedKeys="true">
+        insert into xiaomissm.product_info(p_name, p_content, p_price, p_image, p_number, type_id, p_date)
+        values (#{pName}, #{pContent}, #{pPrice}, #{pImage}, #{pNumber}, #{typeId}, #{pDate})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="pId" useGeneratedKeys="true">
+        insert into xiaomissm.product_info(p_name, p_content, p_price, p_image, p_number, type_id, p_date)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.pName}, #{entity.pContent}, #{entity.pPrice}, #{entity.pImage}, #{entity.pNumber},
+            #{entity.typeId}, #{entity.pDate})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="pId" useGeneratedKeys="true">
+        insert into xiaomissm.product_info(p_name, p_content, p_price, p_image, p_number, type_id, p_date)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.pName}, #{entity.pContent}, #{entity.pPrice}, #{entity.pImage}, #{entity.pNumber},
+            #{entity.typeId}, #{entity.pDate})
+        </foreach>
+        on duplicate key update
+        p_name = values(p_name) , p_content = values(p_content) , p_price = values(p_price) , p_image = values(p_image)
+        , p_number = values(p_number) , type_id = values(type_id) , p_date = values(p_date)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update xiaomissm.product_info
+        <set>
+            <if test="pName != null and pName != ''">
+                p_name = #{pName},
+            </if>
+            <if test="pContent != null and pContent != ''">
+                p_content = #{pContent},
+            </if>
+            <if test="pPrice != null">
+                p_price = #{pPrice},
+            </if>
+            <if test="pImage != null and pImage != ''">
+                p_image = #{pImage},
+            </if>
+            <if test="pNumber != null">
+                p_number = #{pNumber},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId},
+            </if>
+            <if test="pDate != null">
+                p_date = #{pDate},
+            </if>
+        </set>
+        where p_id = #{pId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from xiaomissm.product_info
+        where p_id = #{pId}
+    </delete>
+
+    <delete id="deleteBatch">
+        delete from product_info where p_id in 
+    <foreach collection="array" separator="," open="(" close=")" item="pid">
+        #{pid}
+    </foreach>
+    </delete>
+
+</mapper>
+

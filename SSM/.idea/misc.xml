@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Spring-web" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-exception-handler" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-interceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-interceptor11" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-receiveparam" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-return" />
+    <file type="web" url="file://$PROJECT_DIR$/SSM-integration" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Mybatis01/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring01/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring02-AOP/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-transaction-aspectJ/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-transaction-aspectJ/pom.xml.bak" />
+        <option value="$PROJECT_DIR$/Spring-web/pom.xml" />
+        <option value="$PROJECT_DIR$/SpingMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/SpingMVC-receiveparam/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-receiveparam/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-return/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-return/pom.xml.bak" />
+        <option value="$PROJECT_DIR$/SSM-integration/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-exception-handler/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-exception-handler/pom.xml.bak" />
+        <option value="$PROJECT_DIR$/SpringMVC-interceptor/pom.xml.bak" />
+        <option value="$PROJECT_DIR$/SpringMVC-interceptor/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

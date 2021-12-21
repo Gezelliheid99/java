@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+    <style type="text/css">
+        #div1 {
+            background-color: #a6c0fe;
+            width: 200px;
+            height: 200px;
+            border: 1px black solid;
+            position: absolute;
+            top: 10px;
+            left: 250px;
+            text-align: center;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn1").click(function () {
+                $("#div1").show(1000);
+            });
+
+            $("#btn2").click(function () {
+                $("#div1").hide(1000);
+            });
+
+            $("#btn3").click(function () {
+                $("#div1").toggle(1000);
+            });
+
+            //toggle回调函数
+            function repeatToggle() {
+                $("#div1").toggle(1000, repeatToggle);
+            };
+
+            //淡入
+            $("#btn4").click(function () {
+                $("#div1").fadeIn(1000);
+            });
+
+            //淡出
+            $("#btn5").click(function () {
+                $("#div1").fadeOut(1000);
+            });
+
+            //淡出到一定透明度
+            $("#btn6").click(function () {
+                $("#div1").fadeTo(1000, 0.5);
+            });
+
+            //淡入/淡出切换
+            $("#btn7").click(function () {
+                $("#div1").fadeToggle(1000);
+            });
+
+        })
+
+
+    </script>
+
+
+</head>
+<body>
+<table>
+    <tr>
+        <input type="button" id="btn1" value="显示show()">
+    </tr>
+    <br>
+    <tr>
+        <input type="button" id="btn2" value="隐藏hide()">
+    </tr>
+    <br>
+    <tr>
+        <input type="button" id="btn3" value="显示/隐藏切换 toggle()">
+    </tr>
+    <br>
+    <tr>
+        <input type="button" id="btn4" value="淡入fadeIn()">
+    </tr>
+    <br>
+    <tr>
+        <input type="button" id="btn5" value="淡出fadeOut()">
+    </tr>
+    <br>
+    <tr>
+        <input type="button" id="btn6" value="淡化到 fadeTo()">
+    </tr>
+    <br>
+    <tr>
+        <input type="button" id="btn7" value="显示show淡化切换 fadeToggle()">
+    </tr>
+</table>
+
+<div id="div1" style="...">
+    我是一个div
+</div>
+
+
+</body>
+</html>

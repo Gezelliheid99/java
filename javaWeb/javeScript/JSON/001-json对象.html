@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json对象</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //创建json对象
+        var student = {
+            "sno" : "01",
+            "sname" : "张三",
+            "sex" : "男"
+        };
+        alert(student.sno + "," + student.sname + "," + student.sex );
+
+        //创建json数组
+        var studentArray = [
+        {"sno" : "02", "sName" : "王五","sex" : "男"},
+        {"sno" : "03", "sName" : "阿萨德","sex" : "男"},
+        {"sno" : "04", "sName" : "的翻盖","sex" : "男"}
+        ];
+
+        //遍历数组
+        for (var i = 0;i < studentArray.length;i++){
+            var studentAtrbt = studentArray[i];
+            alert(studentAtrbt.sno + "," + studentAtrbt.sname + "," + studentAtrbt.sex );
+        };
+    </script>
+
+
+
+
+
+</body>
+</html>

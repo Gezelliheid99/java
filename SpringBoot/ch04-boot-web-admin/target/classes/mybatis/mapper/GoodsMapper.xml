@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pjj.boot.mapper.GoodsMapper">
+
+
+    <insert id="insert">
+        insert into goods(id,name,amount,price) value (#{id},#{name},#{amount},#{price})
+    </insert>
+
+    <insert id="insertGoods" useGeneratedKeys="true" keyProperty="id">
+        insert into goods(id,name,amount,price) value (#{id},#{name},#{amount},#{price})
+    </insert>
+    <select id="selectGoods" resultType="com.pjj.boot.bean.Goods">
+        select * from goods where id = #{id}
+    </select>
+</mapper>

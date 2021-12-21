@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>从左到右，从右到左</title>
+    <script src="../../../../webapp/jQuery类库/jquery-3.5.1.js"></script>
+    <style type="text/css">
+        select {
+            width: 100px;
+            height: 140px;
+        }
+
+        div {
+            width: 130px;
+            float: left;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $("button:eq(0)").click(function () {
+            $("select:eq(0) option:selected").appendTo($("select:eq(1)"));
+        });
+        $("button:eq(1)").click(function () {
+            $("select:eq(0) option").appendTo($("select:eq(1)"));
+        });
+        $("button:eq(2)").click(function () {
+            $("select:eq(1) option:selected").appendTo($("select:eq(0)"));
+        });
+        $("button:eq(3)").click(function () {
+            $("select:eq(1) option").appendTo($("select:eq(0)"));
+        });
+
+
+    })
+
+</script>
+
+<div id="left">
+    <select multiple="multiple" name="select01">
+        <option>选项1</option>
+        <option>选项2</option>
+        <option>选项3</option>
+        <option>选项4</option>
+        <option>选项5</option>
+        <option>选项6</option>
+        <option>选项7</option>
+    </select>
+    <button>选中添加到右侧</button>
+    <button>全部添加到右侧</button>
+
+</div>
+
+<div id="right">
+    <select multiple="multiple" name="select02">
+
+    </select>
+    <button>选中删除到左侧</button>
+    <button>全部删除到左侧</button>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
